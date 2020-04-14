@@ -54,8 +54,8 @@ var data =
                   "state": "TN",
                   "senate_class": "2",
                   "state_rank": "",
-                  "lis_id": "S289"
-                  ,"missed_votes_pct": 6.70,
+                  "lis_id": "S289",
+                  "missed_votes_pct": 6.70,
                   "votes_with_party_pct": 87.40,
                   "votes_against_party_pct": 12.60
                 },

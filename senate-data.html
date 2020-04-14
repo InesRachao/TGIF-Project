@@ -6,26 +6,31 @@
     </head>
     
     <body>
-          <div>
-            <div>
-              <img src= "TGIF templates/logoTGIF.jpg" alt ="TGIFLogo">
-            </div>
-            <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-9">
+            <img src= "TGIF templates/logoTGIF.jpg" alt ="TGIFLogo">
+          </div>
+          <div class="col-sm-3">
+            <a href="mailto:info@tgif.net">info@tgif.net</a>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-sm">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a></li>
+                <a class="nav-link" href="home-page.html">Home</a></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" href="#">Congress 113</a>
                 <div class="dropdown-menu">
                     <ul>
-                        <li><a class="dropdown-link" href="#">Senate</a></li>
-                        <li><a class="dropdown-link" href="#">House</a></li>
+                        <li><a class="dropdown-link" href="senate-data.html">Senate</a></li>
+                        <li><a class="dropdown-link" href="house-data.html">House</a></li>
                     </ul>
                 </div>
               </li>
             </ul>
-            </nav> 
-          </div>
+        </nav> 
+      </div>
                
 
 
@@ -34,15 +39,24 @@
             <h2>Senators</h2>
             <p class ="text-justify"> First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
         </div>
-        <div class="table table-striped">
-            <table id = "senate-data">
+
+        <p>Filter by Party:</p>
+          <input type="checkbox" id="checkboxR" onclick="partyFilter()">
+          <label for="party1"> Republican</label>
+          <input type="checkbox" id="checkboxD" onclick="partyFilter()">
+          <label for="party2"> Democrat</label>
+          <input type="checkbox" id="checkboxID" onclick="partyFilter()">
+          <label for="party3"> Independent</label>
+
+        <div>
+            <table id = "senate-data" class = "table table-striped">
                 <thead>
                     <tr>
                         <th>Members</th>
-                        <th>Party</th>
+                        <th>Party Affiliation</th>
                         <th>State</th>
                         <th>Seniority</th>
-                        <th>Total votes</th>
+                        <th>% of Votes w/ Party</th>
                     </tr>
                 </thead>
                 <tbody>
