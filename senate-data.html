@@ -41,12 +41,19 @@
         </div>
 
         <p>Filter by Party:</p>
-          <input type="checkbox" id="checkboxR" onclick="partyFilter()">
-          <label for="party1"> Republican</label>
-          <input type="checkbox" id="checkboxD" onclick="partyFilter()">
-          <label for="party2"> Democrat</label>
-          <input type="checkbox" id="checkboxID" onclick="partyFilter()">
-          <label for="party3"> Independent</label>
+          <div id = "checkbox">
+            <input type="checkbox" name="party" value="R">
+            <label for="party">&nbsp;Republican</label>
+            <input type="checkbox" name="party" value="D">
+            <label for="party">&nbsp;Democrat</label>
+            <input type="checkbox" name="party" value="ID">
+            <label for="party">&nbsp;Independent</label>
+          </div>  
+
+        <p>Filter by State:</p>
+        <select name="state" id="state">
+        <option value="All">All</option>
+        </select>
 
         <div>
             <table id = "senate-data" class = "table table-striped">
