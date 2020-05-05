@@ -1,4 +1,23 @@
-let member = data.results[0].members;
+let senators;
+let ajaxResult = fetch('https://api.propublica.org/congress/v1/113/senate/members.json',{
+  method: "GET",
+  headers:{
+    "X-API-Key": "Zjbs5WDDqPgKG1B7B1TBhHZFgYGJ9dsqjhgLpMO1"
+  }
+})
+  .then(response => response.json())
+  .then(dados =>{
+        console.log(dados.results[0].members);
+        senators = dados.results[0].members;
+        buildTable(senators);
+        addEvent(senators);
+        selectbyState(senators);
+        setTimeout(()=> {document.querySelector("#loader").className += ' ' + "hide-loader"})
+})
+console.log(ajaxResult);
+
+
+
 
 function buildTable(array) {
     let table = document.getElementById("senate-data");
@@ -21,7 +40,6 @@ function buildTable(array) {
         table.appendChild(row)
     }
 }
-buildTable(member);
 
 
 
@@ -30,7 +48,7 @@ function addEvent(array){
     let select = document.getElementById("state").addEventListener("change", ()=>filter(array));
     
   }
-  addEvent(member);
+  
 
 function filter(array){
   let table = document.getElementById("senate-data");
@@ -88,5 +106,13 @@ function filter(array){
     }
     
 }
-selectbyState(data.results[0].members);
+
+
+function loaded(){
+  let loaded = document.createElement('div');
+    loaded.setAttribute('class', 'loader')
+  let trs = document.querySelectorAll('td')
+    console.log(trs)
+}
+
 
